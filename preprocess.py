@@ -9,9 +9,15 @@ class preprocess:
         self.path = path
     def read_file(self):
         if self.path.split(".")[-1] == 'csv':
-            df = pd.read_csv(self.path)
+            df = pd.read_csv(self.path,delimiter=';')
             print(df.head())
 
         return df
+    
+
+if __name__ == "__main__":
+    pre = preprocess('C:\Users\ramka\Downloads\linearregress\datafile.csv')
+    df = pre.read_file()
+
 
     
